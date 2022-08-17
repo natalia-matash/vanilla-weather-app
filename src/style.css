@@ -80,9 +80,9 @@ li {
     line-height: 20px;
     list-style: none;
 }
-.humidity,
-.wind {
+strong {
    color: #F65281;
+   font-weight: 100;
 }
 .temp {
    display: flex;
@@ -91,8 +91,8 @@ li {
 }
 
 .temperature {
-   display: flex;
-   justify-content: end;
+   /* display: flex;
+   justify-content: end; */
    color: #212121;
    margin-left: 20px;
    font-weight: 700;
@@ -102,10 +102,9 @@ li {
 .degrees {
    color: #212121;
    font-size: 28px;
-   font-weight: 400;
+   font-weight: 600;
    position: relative;
    line-height: 1;
-   top: -34px;
 }
 footer {
    font-size: 14px;
