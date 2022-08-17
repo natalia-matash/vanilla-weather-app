@@ -1,0 +1,124 @@
+*,
+*:before,
+*:after{
+    box-sizing:border-box;
+}
+body {
+   background-color: #F9F7FE;
+   font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+   max-width: 800px;
+   display: block;
+   margin: 60px auto;
+   padding: 40px;
+   border-radius: 16px;
+   background-color: #fff;
+   color: rgba(39,33,66,.4);
+}
+form {
+   border-bottom: 1px solid #f9f7fe;
+   padding-bottom: 30px;
+}
+.row {
+   display: flex;
+   flex-wrap: wrap;
+   margin-right: -15px;
+   margin-left: -15px;
+}
+.col-9 {
+   flex: 0 0 75%;
+   max-width: 75%;
+}
+.weather .search-input {
+   background: #f9f7fe;
+   border: none;
+   padding: 15px 20px;
+   display: inline-block;
+   border-radius: 6px;
+   color: rgba(39,33,66,.4);
+   font-size: 16px;
+   height: 50px;
+   line-height: 20px;
+}
+.col-3 {
+   flex: 0 0 25%;
+   max-width: 25%;
+}
+.weather .btn {
+   background: #885df1;
+   font-weight: 700;
+   font-size: 16px;
+   padding: 15px 20px;
+   border: none;
+   height: 50px;
+}
+
+.weather__info {
+   margin-top: 20px;  
+}
+.col-6 {
+   flex: 0 0 50%;
+   max-width: 50%;
+}
+h1 {
+   margin: 20px 0 10px;
+   font-weight: 700;
+   font-size: 38px;
+   line-height: 48px;
+   color: #272142;
+}
+ul {
+   margin: 0;
+   padding: 0;
+}
+li {
+   font-weight: 500;
+    margin-bottom: 5px;
+    color: rgba(39,33,66,.4);
+    font-size: 16px;
+    line-height: 20px;
+    list-style: none;
+}
+.humidity,
+.wind {
+   color: #F65281;
+}
+.temp {
+   display: flex;
+   justify-content: end;
+   margin-top: 30px;
+}
+
+.temperature {
+   display: flex;
+   justify-content: end;
+   color: #212121;
+   margin-left: 20px;
+   font-weight: 700;
+   font-size: 80px;
+   line-height: 1;
+}
+.degrees {
+   color: #212121;
+   font-size: 28px;
+   font-weight: 400;
+   position: relative;
+   line-height: 1;
+   top: -34px;
+}
+footer {
+   font-size: 14px;
+    margin-top: 40px;
+    line-height: 18px;
+    text-align: center;
+    color: rgba(39,33,66,.4);
+}
+footer a {
+   color: #885df1;
+   text-decoration: none;
+   transition: all 200ms ease-in-out;
+}
+footer a:hover {
+   text-decoration: underline;
+}
