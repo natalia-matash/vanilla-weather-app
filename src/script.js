@@ -1,5 +1,5 @@
 function formatDate(timestamp) {
-   let date = new Date(timestamp);
+   let date = new Date();//timestamp - lasr updated
    let days = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
    let day = days[date.getDay()];
    let hours = date.getHours();
@@ -7,7 +7,7 @@ function formatDate(timestamp) {
       hours =`0${hours}`};
    let minutes = date.getMinutes();
    if (minutes < 10) {
-      minutes =`0${hours}`};
+      minutes =`0${minutes}`};
    return `${day} ${hours}:${minutes}`;
 
 }
@@ -25,6 +25,9 @@ function displayTemperature(response) {
    windElement.innerHTML = response.data.wind.speed;
    let dateElement = document.querySelector("#date");
    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+   let iconElement = document.querySelector("#icon");
+   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+   iconElement.setAttribute("alt", response.data.weather[0].icon);
    }
 
 let apiKey = "0511a6e92a8692a228d7c70698a18f5d";
