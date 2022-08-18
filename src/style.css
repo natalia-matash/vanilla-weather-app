@@ -124,6 +124,60 @@ strong {
    color: #885df1;
 }
 
+.weather__forecast {
+   text-align: center;
+    margin: 40px 0;
+    border-bottom: 1px solid #f9f7fe;
+    padding-bottom: 50px;
+}
+.col {
+   position: relative;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.future__day {
+   font-size: 16px;
+   line-height: 20px;
+   text-align: center;
+   color: rgba(39,33,66,.4);
+}
+.col img {
+   display: block;
+    margin: 20px auto;
+}
+.temperature__max {
+   font-style: normal;
+   font-size: 18px;
+   line-height: 1.5;
+   color: #f65282;
+   font-weight: 700;
+}
+.tempetarure__min {
+   margin-left: 10px;
+   opacity: .6;
+   font-style: normal;
+   font-size: 18px;
+   line-height: 1.5;
+   color: #f65282;
+   font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 footer {
    font-size: 14px;
     margin-top: 40px;
