@@ -106,6 +106,24 @@ strong {
    position: relative;
    line-height: 1;
 }
+.active {
+   color: #212121;
+   text-decoration: none;
+   cursor: default;
+}
+.active:hover {
+   color: #212121;
+}
+.no-active {
+   color: #885df1;
+   text-decoration: none;
+   cursor: pointer;
+}
+.no-active:hover {
+   text-decoration: underline;
+   color: #885df1;
+}
+
 footer {
    font-size: 14px;
     margin-top: 40px;
