@@ -74,6 +74,28 @@ function displayCelsiusTemperature(event) {
 
 }
 
+function displsyForecast() {
+   let forecastElement = document.querySelector("#forecast");
+   let days = ["Sun","Mon", "Tue", "Wed", "Thu",];
+   
+   let forecastHTML = `<div class="row">`;
+   
+   days.forEach(function(day) {
+      forecastHTML = forecastHTML + 
+   `<div class="col">
+      <div class="future__day">${day}</div>
+      <img class="icors" src="http://placehold.jp/38x38.png" alt="">
+      <div class="future__temperature">
+        <span class="temperature__max">29&deg;</span>
+        <span class="tempetarure__min">19&deg;</span>
+      </div>
+    </div>`;
+   })
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -86,3 +108,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Kyiv");
+displsyForecast();
