@@ -99,14 +99,18 @@ strong {
    font-size: 80px;
    line-height: 1;
 }
-.degrees {
+.degrees,
+.degrees a {
    color: #212121;
    font-size: 28px;
    font-weight: 600;
    position: relative;
    line-height: 1;
+   text-decoration: none;
+   cursor: default;
 }
-.active {
+
+/* .active {
    color: #212121;
    text-decoration: none;
    cursor: default;
@@ -122,7 +126,7 @@ strong {
 .no-active:hover {
    text-decoration: underline;
    color: #885df1;
-}
+} */
 
 .weather__forecast {
    text-align: center;
