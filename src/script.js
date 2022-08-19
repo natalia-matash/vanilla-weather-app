@@ -9,7 +9,43 @@ function formatDate(timestamp) {
    if (minutes < 10) {
       minutes =`0${minutes}`};
    return `${day} ${hours}:${minutes}`;
+}
 
+function formatDay(timestamp) {
+   let date = new Date(timestamp * 1000);
+   let days = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat",];
+   let day = date.getDay();
+   return days[day];
+
+}
+
+function displayForecast(response) {
+   let forecastElement = document.querySelector("#forecast");
+   let forecast = response.data.daily;
+   let forecastHTML = `<div class="row">`;
+   
+   forecast.forEach(function(forecastDay, index) {
+      if(index < 5) {
+      forecastHTML = forecastHTML + 
+   `<div class="col">
+      <div class="future__day">${formatDay(forecastDay.dt)}</div>
+      <img class="icons" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="">
+      <div class="future__temperature">
+        <span class="temperature__max">${Math.round(forecastDay.temp.max)}&deg;</span>
+        <span class="tempetarure__min">${Math.round(forecastDay.temp.min)}&deg;</span>
+      </div>
+    </div>`;
+      }
+   })
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+   let apiKey = "0511a6e92a8692a228d7c70698a18f5d";
+   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -35,7 +71,9 @@ function displayTemperature(response) {
    let iconElement = document.querySelector("#icon");
    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
    iconElement.setAttribute("alt", response.data.weather[0].icon);
-   }
+   
+   getForecast(response.data.coord);
+}
 
 
 function search(city) {
@@ -71,28 +109,6 @@ function displayCelsiusTemperature(event) {
    fahrenheitLink.classList.add("no-active");
    let temperatureElement = document.querySelector("#temperature");
    temperatureElement.innerHTML = Math.round(celsiusTemperature);
-
-}
-
-function displsyForecast() {
-   let forecastElement = document.querySelector("#forecast");
-   let days = ["Sun","Mon", "Tue", "Wed", "Thu",];
-   
-   let forecastHTML = `<div class="row">`;
-   
-   days.forEach(function(day) {
-      forecastHTML = forecastHTML + 
-   `<div class="col">
-      <div class="future__day">${day}</div>
-      <img class="icors" src="http://placehold.jp/38x38.png" alt="">
-      <div class="future__temperature">
-        <span class="temperature__max">29&deg;</span>
-        <span class="tempetarure__min">19&deg;</span>
-      </div>
-    </div>`;
-   })
-    forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML = forecastHTML;
 }
 
 
@@ -108,4 +124,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Kyiv");
-displsyForecast();
+displayForecast();
